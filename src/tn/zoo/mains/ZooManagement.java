@@ -1,7 +1,6 @@
 package tn.zoo.mains;
 
-import tn.zoo.entities.Animal;
-import tn.zoo.entities.Zoo;
+import tn.zoo.entities.*;
 
 public class ZooManagement {
     public static void main(String[] args) {
@@ -27,7 +26,7 @@ public class ZooManagement {
         Animal a2 = new Animal();
 //        a2.age = 22;
 //        a2.name = "simba";
-        a2.family="Lions";
+        a2.setFamily("Lions");
         //a2.isMammal=true;
 
         Animal lion = new Animal("chat",22,"Lions",true);
@@ -54,7 +53,39 @@ public class ZooManagement {
 //        System.out.println(a2.equals(lion));
         System.out.println(myZoo1.addAnimal(lion));
        // System.out.println("myzoo1 "+Zoo.nbAnimalTotal);
+        System.out.println("---------------Prosit 4-----------");
+       // Aquatic aquatic= new Aquatic();
+        Terrestrial terrestrial = new Terrestrial();
+        Penguin penguin = new Penguin();
+        penguin.setName("p1");
+        penguin.setAge(2);
+        penguin.setHabitat("bizert");
 
+        penguin.swimmingDepth=20;
+        Penguin penguin1 = new Penguin();
+        penguin1.setName("p1");
+        penguin1.setAge(3);
+        penguin1.setHabitat("bizert");
+        penguin1.swimmingDepth=20;
+        Dolphin dolphin= new Dolphin();
+
+        //aquatic.swim();
+        dolphin.swim();
+        penguin.swim();
+       // myZoo1.addAquaticAnimal(aquatic);
+        myZoo1.addAquaticAnimal(dolphin);
+        myZoo1.addAquaticAnimal(penguin);
+        myZoo1.addAquaticAnimal(penguin1);
+
+        System.out.println(penguin1.equals(penguin1));
+
+        System.out.println(myZoo.equals(myZoo1));
+//        for(int i=0;i<myZoo1.nbAnimalAquatic;i++){
+//            myZoo1.aquaticAnimals[i].swim();
+//        }
+
+        System.out.println( myZoo1.maxSwimmingDepth());
+        myZoo1.displayNumberOfAquatiqsAnimal();
 
     }
 }

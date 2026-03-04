@@ -1,9 +1,9 @@
 package tn.zoo.entities;
 
  public class Animal {
-     String name;
-     public String family;
-      private int age ;
+     protected String name;
+     protected String family;
+      protected int age ;
     protected boolean isMammal;
 
 public Animal(){}
@@ -41,8 +41,29 @@ public void setAge(int age){
     if(age>0){
         this.age=age;
     }
-
 }
 
+     public String getName() {
+         return name;
+     }
 
-}
+     public void setName(String name) {
+         this.name = name;
+     }
+
+     public String getFamily() {
+         return family;
+     }
+
+     public void setFamily(String family) {
+         this.family = family;
+     }
+
+     public boolean isMammal() {
+         return isMammal;
+     }
+
+     public void setMammal(boolean mammal) {
+         isMammal = mammal;
+     }
+ }

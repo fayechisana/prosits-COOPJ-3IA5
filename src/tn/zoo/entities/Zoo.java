@@ -4,9 +4,11 @@ import tn.zoo.entities.Animal;
 
 public class Zoo {
     Animal[] animals;
+   public Aquatic[] aquaticAnimals = new Aquatic[10];
     String name,city;
     public static final int NB_CAGES=25;
     int nbAnimal;
+  public   int nbAnimalAquatic;
     static int nbAnimalTotal;
 
     public Zoo(String name,String city ){
@@ -64,5 +66,37 @@ public class Zoo {
             return true;
         }
         return false;
+    }
+    public void addAquaticAnimal(Aquatic aquatic){
+        if (nbAnimalAquatic < 10 ) {
+            aquaticAnimals[nbAnimalAquatic] = aquatic;
+            nbAnimalAquatic++;
+        }
+    }
+    public float maxSwimmingDepth(){
+        float max =0;
+        for(int i=0;i<nbAnimalAquatic;i++){
+            //if(aquaticAnimals[i].getClass().equals(Penguin.class))
+            if(aquaticAnimals[i] instanceof Penguin) {
+                if (max < ((Penguin) aquaticAnimals[i]).swimmingDepth) {
+                    max = ((Penguin) aquaticAnimals[i]).swimmingDepth;
+                }
+           }
+        }
+        return max;
+    }
+    public void displayNumberOfAquatiqsAnimal(){
+        int nbP =0;
+        int nbD =0;
+        for(int i=0;i<nbAnimalAquatic;i++){
+            if(aquaticAnimals[i] instanceof Penguin){
+                nbP++;
+
+            }else {
+                nbD++;
+            }
+        }
+        System.out.println("nbr Penguin "+nbP);
+        System.out.println("nbr dolphin " + nbD);
     }
 }
